@@ -12,9 +12,11 @@ import { links } from '../utils/constants'
 // context
 import { useThemeContext } from "../context/theme_context";
 
-
-
 const Navbar = () => {
+    const { theme } = useThemeContext();
+    console.log(theme, "Theme context");
+    console.log('navbar');
+
     return (
         <NavContainer>
             <div className='nav-center'>
@@ -28,9 +30,8 @@ const Navbar = () => {
                             <img src={logoDark} alt="nav logo" />
                         </Link>
                     )}
-                    <button onClick type="button" className="nav-toggle">
-                        <FaBars />
-                        hello
+                    <button type="button" className="nav-toggle">
+                        <FaBars /> {/* Add openSidebar function here*/}
                     </button>
                 </div>
                 <ul className='nav-links'>
@@ -44,7 +45,7 @@ const Navbar = () => {
                         );
                     })}
                     {/* if the user is loggedIn render the following: */}
-                    {false /* myUser: TODO: add this later */ && (
+                    {/*  myUser: TODO: add this later */}     {false && (
                         <>
                             <li>
                                 <Link to="/history">history</Link>
@@ -72,6 +73,6 @@ const NavContainer = styled.nav`
         max-width: var(--max-width);
     }
     
-    `
+    `;
 
 export default Navbar

@@ -1,5 +1,5 @@
 import { useEffect, useContext, useReducer, createContext } from "react";
-import reducer from "../reducers/theme_reducers"
+import reducer from "../reducers/theme_reducer"
 
 const initialState = {
     theme: "",
@@ -18,6 +18,7 @@ export const ThemeProvider = ({ children }) => {
 
     useEffect(() => {
         dispatch({ type: "SET_PREV_THEME" });
+        console.log(state)
     }, []);
 
     return (
