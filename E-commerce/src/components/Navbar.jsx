@@ -5,8 +5,8 @@ import styled from "styled-components"
 import { FaBars } from 'react-icons/fa'
 
 // assets
-import logo from "../assets/logo.svg"
-import logoDark from "../assets/logo-dark.svg"
+import logo from "../assets/logo.png"
+//import logoDark from "../assets/logo-dark.svg"
 import { links } from '../utils/constants'
 
 // context
@@ -27,7 +27,7 @@ const Navbar = () => {
                         </Link>
                     ) : (
                         <Link to='/'>
-                            <img src={logoDark} alt="nav logo" />
+                            <img src={logo} alt="nav logo" />
                         </Link>
                     )}
                     <button type="button" className="nav-toggle">
@@ -72,6 +72,34 @@ const NavContainer = styled.nav`
         margin: 0 auto;
         max-width: var(--max-width);
     }
+    .nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 175px;
+            margin-left: -15px;
+        }
+    }
+
+    .nav-toggle {
+        background: transparent;
+        border: transparent;
+        color: var(--clr-primary-5);
+        cursor: pointer;
+        svg {
+            font-size: 2rem;
+        }
+    }
+    .nav-links {
+        display: none;
+    }
+    .cart-btn-wrapper {
+        display: none;
+    }
+
+
+
     
     `;
 
