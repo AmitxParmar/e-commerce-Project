@@ -1,4 +1,4 @@
 GET http://localhost:8000/api/products
 
 ###
-GET http://localhost:8000/
+GET http://localhost:8000/api/products/recZkNf2kwmdBcqd0

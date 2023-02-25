@@ -1,15 +1,19 @@
 {
-  "name": "Full-stack-Ecommerce-website",
+  "name": "full-stack-ecommerce-website",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node index.js",
-    "dev": "nodemon index.js"
+    "dev:server": "nodemon server.js",
+    "dev:client": "npm run dev --prefix ./E-commerce",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
   }
 }

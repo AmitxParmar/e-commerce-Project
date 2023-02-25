@@ -1,10 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 
+// init app
 const app = express();
 app.use(express.json());
 app.use(cors());
 
+// import product data from local json
 const products = require("./products.json");
 const product_details = require("./product.json");
 
@@ -19,7 +21,6 @@ app.get("/", (req, res) => {
         },
     });
 });
-
 
 // GET all products at once
 app.get("/api/products", (req, res) => {
@@ -42,7 +43,7 @@ app.get("/api/products/:id", (req, res) => {
     res.status(200).send(product);
 });
 
-
+// ENV
 const port = process.env.PORT || 8000;
 app.listen(port, () =>
     console.log(`Running E-commerce API Server on ${port}..`)
