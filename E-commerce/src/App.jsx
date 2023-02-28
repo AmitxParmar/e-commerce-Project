@@ -8,7 +8,12 @@ import { useThemeContext } from "./context/theme_context";
 
 // components
 import { Navbar } from './components';
-import { About, History, Home, Products } from './pages'
+import {
+  About,
+  History,
+  Home,
+  Products
+} from './pages'
 
 function App() {
   const { theme } = useThemeContext();
@@ -24,8 +29,7 @@ function App() {
   }, [theme]);
 
   return (
-    <div >
-
+    <div > {/* Temporary tag, will replace with AuthWrapper */}
       <Router>
         <Navbar />
         <Routes>
