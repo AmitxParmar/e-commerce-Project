@@ -8,7 +8,7 @@ import { useThemeContext } from "./context/theme_context";
 
 // components
 import { Navbar } from './components';
-import { About, History, Home, } from './pages'
+import { About, History, Home, Products } from './pages'
 
 function App() {
   const { theme } = useThemeContext();
@@ -33,6 +33,7 @@ function App() {
           <Route path="*" element={<Error />} />
           <Route path="/about" element={<About />} />
           <Route path="/history" element={<History />} />
+          <Route path="/products" element={<Products />} />
         </Routes>
       </Router>
     </div>
