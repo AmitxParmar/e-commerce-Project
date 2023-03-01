@@ -6,28 +6,28 @@ import heroBcg from "../assets/hero-bcg.jpeg"
 import heroBcg2 from "../assets/hero-bcg-2.jpeg"
 
 const Hero = () => {
-    return (
-        <Wrapper>
-            <article
-                className='content'
-            >
-                <h1>
-                    design your <br />
-                    comfort zone
-                </h1>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, vel, consequuntur exercitationem ab sapiente laborum aperiam nesciunt quasi iste placeat dolore atque. Consequatur debitis.
-                </p>
-                <Link to="/products" className='btn hero-btn'>
-                    shop now
-                </Link>
-            </article>
-            <article>
-                <img src={heroBcg} alt="herobcgimage" className="main-image" />
-                <img src={heroBcg2} alt="herobcgimage2" className="accent-image" />
-            </article>
-        </Wrapper>
-    )
+  return (
+    <Wrapper>
+      <article
+        className='content'
+      >
+        <h1>
+          design your <br />
+          comfort zone
+        </h1>
+        <p>
+          Quality products at affordable prices, every time.
+        </p>
+        <Link to="/products" className='btn hero-btn'>
+          shop now
+        </Link>
+      </article>
+      <article>
+        <img src={heroBcg} alt="herobcgimage" className="main-image" />
+        <img src={heroBcg2} alt="herobcgimage2" className="accent-image" />
+      </article>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`

@@ -5,29 +5,23 @@ import { PageHero } from "../components";
 import aboutImg from "../assets/hero-bcg.jpeg";
 
 const AboutPage = () => {
-    return (
-        <main>
-            <PageHero title="about" />
-            <Wrapper className="page section section-center">
-                <img src={aboutImg} alt="heroimage" className="" />
-                <article>
-                    <div className="title">
-                        <h2>our story</h2>
-                        <div className="underline"></div>
-                    </div>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                        Consequuntur itaque harum nisi cupiditate, modi molestias distinctio
-                        odio possimus sapiente, ipsa ullam veritatis. Delectus dolorum
-                        recusandae accusamus vero voluptatum commodi optio saepe totam
-                        voluptas asperiores consequuntur, quos iste laudantium libero
-                        minima? Nulla, impedit. Itaque quae voluptate ad consequatur ea
-                        maxime unde.
-                    </p>
-                </article>
-            </Wrapper>
-        </main>
-    );
+  return (
+    <main>
+      <PageHero title="about" />
+      <Wrapper className="page section section-center">
+        <img src={aboutImg} alt="heroimage" className="" />
+        <article>
+          <div className="title">
+            <h2>our story</h2>
+            <div className="underline"></div>
+          </div>
+          <p>
+            Our story began with a simple idea - to create a platform where people could find high-quality products at affordable prices. We started small, with just a handful of items, but over time we grew and expanded our selection to meet the needs of our customers. Today, we are proud to offer a wide variety of products from some of the best brands in the industry. We are committed to providing exceptional customer service and ensuring that every transaction is a positive experience. Our passion for quality and affordability drives everything we do, and we look forward to continuing to serve our customers for many years to come.
+          </p>
+        </article>
+      </Wrapper>
+    </main>
+  );
 };
 
 const Wrapper = styled.section`
