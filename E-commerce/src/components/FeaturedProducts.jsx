@@ -1,29 +1,37 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-import Error from './Error'
-import Loading
-    from './Loading'
+import Error from "./Error";
+import Loading from "./Loading";
 
 
 const FeaturedProducts = () => {
+    const loading = false
+    const error = false
+
+    if (loading) {
+        return <Loading />;
+    }
+
+    if (error) {
+        return <Error message="fetching featured products" />;
+    }
+
     return (
-        <Wrapper>
-            Featured products goes here
-            <div className='title'>
-                <h2>Featured products</h2>
-                <div className='underline'></div>
+        <Wrapper className="section">
+            <div className="title">
+                <h2>featured products</h2>
+                <div className="underline"></div>
             </div>
-            <div className='section-center featured'>
-                { }
+            <div className="section-center featured">
             </div>
-            <Link>
+            <Link className="btn" to="/products">
                 all products
             </Link>
         </Wrapper>
     );
-}
+};
 
 const Wrapper = styled.section`
   background: var(--clr-grey-10);
@@ -48,4 +56,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default FeaturedProducts
+export default FeaturedProducts;

@@ -4,6 +4,7 @@ import PageHero from './PageHero'
 import Error from './Error'
 import Loading from './Loading'
 import FeaturedProducts from './FeaturedProducts'
+import Services from './Services';
 
 export {
     Navbar,
@@ -11,5 +12,7 @@ export {
     Hero,
     Error,
     Loading,
-    PageHero
+    PageHero,
+    Services
+
 };
