@@ -6,6 +6,7 @@ const HomePage = () => {
     return (
         <>
             <Hero />
+
         </>)
 }
 

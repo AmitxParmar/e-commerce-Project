@@ -1,8 +1,11 @@
 import React from 'react'
+import { PageHero } from '../components'
 
 const HistoryPage = () => {
     return (
-        <div>HistoryPage</div>
+        <main>
+            <PageHero title="history" />
+        </main>
     )
 }
 
