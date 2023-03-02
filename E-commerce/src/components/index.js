@@ -6,6 +6,7 @@ import Loading from './Loading'
 import FeaturedProducts from './FeaturedProducts'
 import Services from './Services';
 import Contact from './Contact';
+import ThemeChange from './ThemeChange';
 
 export {
     Navbar,
@@ -15,6 +16,7 @@ export {
     Loading,
     PageHero,
     Services,
-    Contact
+    Contact,
+    ThemeChange
 
 };

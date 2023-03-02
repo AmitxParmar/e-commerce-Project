@@ -21,21 +21,21 @@ export const links = [
 export const services = [
     {
         id: "1asd2df34",
-        icon: 'missionLogo'/* <GiCompass /> */,
+        icon: <GiCompass />,
         title: 'mission',
         text:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
     },
     {
         id: "u23hr78923",
-        icon: "visionLogo", /* < GiDiamondHard /> */
+        icon: < GiDiamondHard />,
         title: 'vision',
         text:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
     },
     {
         id: "asda345sda234",
-        icon: "historyLogo"/* <GiStabbedNote /> */,
+        icon: <GiStabbedNote />,
         title: 'history',
         text:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',

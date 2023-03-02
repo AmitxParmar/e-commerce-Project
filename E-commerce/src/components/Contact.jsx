@@ -1,49 +1,50 @@
 import React from "react";
 import styled from "styled-components";
+import ThemeChange from "./ThemeChange";
 
 
 const Contact = () => {
-    return (
-        <Wrapper>
-            <div className="section-center">
-                <h3>Join out newsletter and get 25% off</h3>
-                <div className="content">
-                    <p>
-                        {" "}
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-                        necessitatibus ex, aliquam et veritatis placeat totam debitis rem,
-                        blanditiis harum, esse laborum impedit mollitia fuga velit maiores
-                        voluptatibus sunt dicta.
-                    </p>
-                    <form
-                        method="POST"
-                        action="https://formspree.io/f/xbjpwdyq"
-                        className="contact-form"
-                    >
-                        <input
-                            type="email"
-                            name="_replyto"
-                            placeholder="enter email"
-                            className="form-input"
-                        />
-                        <button type="submit" className="submit-btn">
-                            subscribe
-                        </button>
-                    </form>
-                </div>
-                <div
-                    className="section-center"
-                    style={{
-                        textAlign: "center",
-                        alignItems: "center",
-                        alignContent: "center",
-                        marginTop: "50px",
-                    }}
-                ></div>
-                {/* NOTE: Theme change component goes here */}
-            </div>
-        </Wrapper>
-    );
+  return (
+    <Wrapper>
+      <div className="section-center">
+        <h3>Join out newsletter and get 25% off</h3>
+        <div className="content">
+          <p>
+            {" "}
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            necessitatibus ex, aliquam et veritatis placeat totam debitis rem,
+            blanditiis harum, esse laborum impedit mollitia fuga velit maiores
+            voluptatibus sunt dicta.
+          </p>
+          <form
+            method="POST"
+            action="https://formspree.io/f/xbjpwdyq"
+            className="contact-form"
+          >
+            <input
+              type="email"
+              name="_replyto"
+              placeholder="enter email"
+              className="form-input"
+            />
+            <button type="submit" className="submit-btn">
+              subscribe
+            </button>
+          </form>
+        </div>
+        <div
+          className="section-center"
+          style={{
+            textAlign: "center",
+            alignItems: "center",
+            alignContent: "center",
+            marginTop: "50px",
+          }}
+        ></div>
+        <ThemeChange />
+      </div>
+    </Wrapper>
+  );
 };
 const Wrapper = styled.section`
   padding: 5rem 0;
