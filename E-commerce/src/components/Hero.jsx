@@ -1,16 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from "react-router-dom"
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-import heroBcg from "../assets/hero-bcg.jpeg"
-import heroBcg2 from "../assets/hero-bcg-2.jpeg"
+import heroBcg from "../assets/hero-bcg.jpeg";
+import heroBcg2 from "../assets/hero-bcg-2.jpeg";
 
 const Hero = () => {
   return (
-    <Wrapper>
-      <article
-        className='content'
-      >
+    <Wrapper className="section-center">
+      <article className="content">
         <h1>
           design your <br />
           comfort zone
@@ -18,20 +16,20 @@ const Hero = () => {
         <p>
           Quality products at affordable prices, every time.
         </p>
-        <Link to="/products" className='btn hero-btn'>
+        <Link to="/products" className="btn hero-btn">
           shop now
         </Link>
       </article>
-      <article>
-        <img src={heroBcg} alt="herobcgimage" className="main-image" />
-        <img src={heroBcg2} alt="herobcgimage2" className="accent-image" />
+      <article className="img-container">
+        <img src={heroBcg} alt="herobcgimage" className="main-img" />
+        <img src={heroBcg2} alt="herobcgimage2" className="accent-img" />
       </article>
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.section`
-      min-height: 60vh;
+  min-height: 60vh;
   display: grid;
   place-items: center;
   .img-container {
@@ -92,4 +90,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default Hero
+export default Hero;
