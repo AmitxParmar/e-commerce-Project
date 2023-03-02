@@ -7,9 +7,9 @@ const ProductsPage = () => {
     return (
         <main id='main'>
             <PageHero title='products' />
-            <div className='page'>
+            <Wrapper className='page'>
                 Products Page Goes Here
-            </div>
+            </Wrapper>
         </main>
     );
 };
