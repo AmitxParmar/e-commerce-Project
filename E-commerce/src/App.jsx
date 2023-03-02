@@ -12,7 +12,8 @@ import {
   About,
   History,
   Home,
-  Products
+  Products,
+  Error
 } from './pages'
 
 function App() {
