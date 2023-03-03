@@ -7,6 +7,7 @@ import FeaturedProducts from './FeaturedProducts'
 import Services from './Services';
 import Contact from './Contact';
 import ThemeChange from './ThemeChange';
+import Product from './Product';
 
 export {
     Navbar,
@@ -17,6 +18,7 @@ export {
     PageHero,
     Services,
     Contact,
-    ThemeChange
+    ThemeChange,
+    Product
 
 };
