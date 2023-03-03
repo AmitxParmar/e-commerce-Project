@@ -3,10 +3,20 @@ import styled from 'styled-components'
 
 import Product from './Product'
 
-const GridView = () => {
+const GridView = ({ products }) => {
     return (
-        <div>GridView</div>
+        <Wrapper>
+            <div className='products-container'>
+                {products.map((product) => {
+                    return <Product key={product.id} {...product} />
+                })}
+            </div>
+        </Wrapper>
     )
 }
+
+const Wrapper = styled.section`
+
+`
 
 export default GridView
