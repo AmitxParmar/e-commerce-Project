@@ -8,6 +8,9 @@ import Services from './Services';
 import Contact from './Contact';
 import ThemeChange from './ThemeChange';
 import Product from './Product';
+import GridView from './GridView';
+import ListView from './ListView';
+import ProductList from './ProductList';
 
 export {
     Navbar,
@@ -20,6 +23,7 @@ export {
     Contact,
     ThemeChange,
     Product,
+    ProductList,
     GridView,
     ListView,
 
