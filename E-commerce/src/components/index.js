@@ -19,6 +19,8 @@ export {
     Services,
     Contact,
     ThemeChange,
-    Product
+    Product,
+    GridView,
+    ListView,
 
 };
