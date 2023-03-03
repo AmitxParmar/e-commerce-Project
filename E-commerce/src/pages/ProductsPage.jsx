@@ -8,7 +8,13 @@ const ProductsPage = () => {
         <main id='main'>
             <PageHero title='products' />
             <Wrapper className='page'>
-                Products Page Goes Here
+                <div className='section-center products'>
+                    {/* Filter component goes goes here */}
+                    <div>
+                        {/* Sort Component Goes Here */}
+                        {/* Product List Goes Here */}
+                    </div>
+                </div>
             </Wrapper>
         </main>
     );
