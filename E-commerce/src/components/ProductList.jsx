@@ -15,9 +15,9 @@ const ProductList = () => {
             </h5>
         );
     }
-    if (!gridView) {
-        return
-    }
+    /*  if (!gridView) {
+         return
+     } */
 
     return (
         <GridView products={products} />
