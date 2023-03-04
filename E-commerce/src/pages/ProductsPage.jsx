@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageHero, ProductList, Filters } from '../components'
+import { PageHero, ProductList, Filters, Sort } from '../components'
 import styled from 'styled-components'
 
 
@@ -11,8 +11,7 @@ const ProductsPage = () => {
         <div className='section-center products'>
           <Filters />
           <div>
-            {/* Sort Component Goes Here */}
-            {/* Product List Goes Here */}
+            <Sort />
             <ProductList />
           </div>
         </div>
