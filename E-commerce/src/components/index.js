@@ -13,6 +13,7 @@ import ListView from './ListView';
 import ProductList from './ProductList';
 import Filters from './Filters';
 import Sort from './Sort';
+import ProductImages from './ProductImages';
 
 export {
     Navbar,
@@ -29,6 +30,7 @@ export {
     GridView,
     ListView,
     Filters,
-    Sort
+    Sort,
+    ProductImages
 
 };

@@ -3,12 +3,13 @@ import About from './AboutPage'
 import History from './HistoryPage'
 import Error from './ErrorPage'
 import Products from './ProductsPage'
-
+import SingleProduct from './SingleProductPage'
 
 export {
-    About,
-    Error,
     Home,
-    History,
+    About,
     Products,
+    SingleProduct,
+    Error,
+    History,
 };

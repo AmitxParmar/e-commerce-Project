@@ -13,7 +13,8 @@ import {
   History,
   Home,
   Products,
-  Error
+  Error,
+  SingleProduct
 } from './pages'
 
 function App() {
@@ -30,18 +31,17 @@ function App() {
   }, [theme]);
 
   return (
-    <div > {/* Temporary tag, will replace with AuthWrapper */}
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<Error />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/history" element={<History />} />
-          <Route path="/products" element={<Products />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Error />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<SingleProduct />} />
+      </Routes>
+    </Router>
   )
 }
 
