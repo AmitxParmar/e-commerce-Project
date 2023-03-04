@@ -129,7 +129,7 @@ const Filters = () => {
                             value={price}
                         />
                     </div>
-
+                    {/* Free shipping */}
                     <div className="form-control">
                         <label>Free shipping</label>
                         <input
@@ -141,6 +141,7 @@ const Filters = () => {
                         />
                     </div>
                 </form>
+                {/* Clear filter button */}
                 <button
                     type="button"
                     className='clear-btn'
@@ -154,24 +155,24 @@ const Filters = () => {
 }
 
 const Wrapper = styled.section`
-.form-control {
+  .form-control {
     margin-bottom: 1.25rem;
     h5 {
-        margin-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
     }
-}
-.search-input {
+  }
+  .search-input {
     padding: 0.5rem;
     background: var(--clr-primary-10);
     border-radius: var(--radius);
     border-color: transparent;
     letter-spacing: var(--spacing);
-}
-.search-input::placeholder {
+  }
+  .search-input::placeholder {
     text-transform: capitalize;
-}
+  }
 
-button {
+  button {
     display: block;
     margin: 0.25em 0;
     padding: 0.25rem 0;
@@ -179,24 +180,24 @@ button {
     background: transparent;
     border: none;
     border-bottom: 1px solid transparent;
-    letter-spacing: var(--clr-grey-5);
+    letter-spacing: var(--spacing);
     color: var(--clr-grey-5);
     cursor: pointer;
-}
-.active {
+  }
+  .active {
     border-color: var(--clr-grey-5);
-}
-.company {
-    background: var(--clr-grey-5);
+  }
+  .company {
+    background: var(--clr-primary-10);
     border-radius: var(--radius);
     border-color: transparent;
     padding: 0.25rem;
-}
-.colors {
-display: flex;
-align-items: center;
-}
-.color-btn {
+  }
+  .colors {
+    display: flex;
+    align-items: center;
+  }
+  .color-btn {
     display: inline-block;
     width: 1rem;
     height: 1rem;
@@ -210,54 +211,46 @@ align-items: center;
     align-items: center;
     justify-content: center;
     svg {
-        font-size:0.5rem;
-        color: var(--clr-white);
+      font-size: 0.5rem;
+      color: var(--clr-white);
     }
-}
-.all-btn {
+  }
+  .all-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 0.5rem;
     opacity: 0.5;
-}
-.active {
+  }
+  .active {
     opacity: 1;
-}
-.all-btn .active {
+  }
+  .all-btn .active {
     text-decoration: underline;
-}
-.price {
+  }
+  .price {
     margin-bottom: 0.25rem;
-}
-.shipping {
+  }
+  .shipping {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
     text-transform: capitalize;
     column-gap: 0.5rem;
     font-size: 1rem;
-}
-.clear-btn {
+  }
+  .clear-btn {
     background: var(--clr-red-dark);
     color: var(--clr-white);
     padding: 0.25rem 0.5rem;
     border-radius: var(--radius);
-}
-.clear-btn {
-    background: var(--clr-red-dark);
-    color: var(--clr-white);
-    padding: 0.25rem 0.25rem;
-    border-radius: var(--radius);
-}
-@media (min-width: 768px) {
-.content {
-    position: sticky;
-    top: 1rem;
-}
-}
+  }
+  @media (min-width: 768px) {
+    .content {
+      position: sticky;
+      top: 1rem;
+    }
+  }
+`;
 
-
-`
-
-export default Filters
+export default Filters;

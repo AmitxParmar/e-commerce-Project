@@ -24,21 +24,21 @@ export const services = [
         icon: <GiCompass />,
         title: 'mission',
         text:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+            'Our mission is to provide our customers with the best possible shopping experience, from the moment they land on our site to the time they receive their orders. We strive to make shopping online convenient, fast, and secure while offering competitive prices and exceptional customer service.',
     },
     {
         id: "u23hr78923",
         icon: < GiDiamondHard />,
         title: 'vision',
         text:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+            'At our ecommerce site, our vision is to become a leading platform for online shopping by providing customers with a seamless and enjoyable shopping experience.',
     },
     {
         id: "asda345sda234",
         icon: <GiStabbedNote />,
         title: 'history',
         text:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+            'Our history dates back to 2015 when we started as a small online store selling a few products. Over the years, we have grown into a full-fledged ecommerce platform with a wide range of products and services.',
     },
 ]
 
