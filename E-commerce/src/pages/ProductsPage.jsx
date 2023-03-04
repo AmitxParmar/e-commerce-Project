@@ -1,25 +1,24 @@
 import React from 'react'
-import { PageHero } from '../components'
+import { PageHero, ProductList, Filters } from '../components'
 import styled from 'styled-components'
-import { ProductList } from './../components';
 
 
 const ProductsPage = () => {
-    return (
-        <main id='main'>
-            <PageHero title='products' />
-            <Wrapper className='page'>
-                <div className='section-center products'>
-                    {/* Filter component goes goes here */}
-                    <div>
-                        {/* Sort Component Goes Here */}
-                        {/* Product List Goes Here */}
-                        <ProductList />
-                    </div>
-                </div>
-            </Wrapper>
-        </main>
-    );
+  return (
+    <main id='main'>
+      <PageHero title='products' />
+      <Wrapper className='page'>
+        <div className='section-center products'>
+          <Filters />
+          <div>
+            {/* Sort Component Goes Here */}
+            {/* Product List Goes Here */}
+            <ProductList />
+          </div>
+        </div>
+      </Wrapper>
+    </main>
+  );
 };
 
 const Wrapper = styled.div`
