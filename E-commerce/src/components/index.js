@@ -14,6 +14,7 @@ import ProductList from './ProductList';
 import Filters from './Filters';
 import Sort from './Sort';
 import ProductImages from './ProductImages';
+import Stars from './Stars';
 
 export {
     Navbar,
@@ -31,6 +32,7 @@ export {
     ListView,
     Filters,
     Sort,
-    ProductImages
+    ProductImages,
+    Stars
 
 };
