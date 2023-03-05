@@ -10,10 +10,11 @@ import {
 
 const cart_reducer = (state, action) => {
     switch (action.type) {
+
+        // ADD PRODUCT TO CART
         case ADD_TO_CART: {
             const { id, color, amount, product } = action.payload;
             const tempItem = state.cart.find((i) => i.id === id + color);
-
             if (tempItem) {
                 const tempCart = state.cart.map((cartItem) => {
                     if (cartItem.id === id + color) {
@@ -27,7 +28,6 @@ const cart_reducer = (state, action) => {
                         return cartItem;
                     }
                 });
-
                 return {
                     ...state,
                     cart: tempCart,
@@ -46,6 +46,7 @@ const cart_reducer = (state, action) => {
             }
         }
 
+        // REMOVE ITEMS FROM THE CART
         case REMOVE_CART_ITEM: {
             const tempCart = state.cart.filter((item) => item.id !== action.payload);
             return {
@@ -80,6 +81,8 @@ const cart_reducer = (state, action) => {
                 cart: [],
             };
         }
+
+        // TOGGLE CART ITEM AMOUNT AS WE ADD NEW ITEMS
         case TOGGLE_CART_ITEM_AMOUNT: {
             const { id, value } = action.payload;
             const tempCart = state.cart.map((item) => {
@@ -109,6 +112,8 @@ const cart_reducer = (state, action) => {
                 cart: tempCart,
             };
         }
+
+        // COUNT TOTAL CART ITEMS
         case COUNT_CART_TOTALS: {
             const { totalAmount, totalItems } = state.cart.reduce(
                 (total, item) => {

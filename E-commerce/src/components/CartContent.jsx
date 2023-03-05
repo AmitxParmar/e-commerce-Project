@@ -29,8 +29,8 @@ const CartContent = () => {
             </div>
             <CartTotals />
         </Wrapper>
-    )
-}
+    );
+};
 
 const Wrapper = styled.section`
     .link-container {
