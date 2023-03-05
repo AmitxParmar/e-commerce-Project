@@ -12,6 +12,7 @@ import {
     ProductImages,
     Stars,
     PageHero,
+    AddToCart,
 } from '../components'
 
 const SingleProductPage = () => {
@@ -73,7 +74,7 @@ const SingleProductPage = () => {
                             {company}
                         </p>
                         <hr />
-                        {/* [stock > 0 &7 < */} {/* create add cart component */}
+                        {stock > 0 && <AddToCart product={product} />}
                     </section>
                 </div>
             </div>
