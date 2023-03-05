@@ -3,17 +3,20 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
 const ErrorPage = () => {
-    return (
-        <Wrapper className='page-100'>
-            <section>
-                <h1>404</h1>
-                <h3>page not found :(</h3>
-                <Link to='/' className='btn'>
-                    back to home
-                </Link>
-            </section>
-        </Wrapper>
-    )
+  React.useEffect(() => {
+    document.title = "Error"
+  }, [])
+  return (
+    <Wrapper className='page-100'>
+      <section>
+        <h1>404</h1>
+        <h3>page not found :(</h3>
+        <Link to='/' className='btn'>
+          back to home
+        </Link>
+      </section>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.main`

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { FaCheck } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import AmountButtons from './AmountButtons';
 
 const AddToCart = ({ product }) => {
 
@@ -26,7 +27,7 @@ const AddToCart = ({ product }) => {
                 </div>
             </div>
             <div className='btn-container'>
-                {/* AmountButtons components goes here */}
+                <AmountButtons />
                 <Link
                     to="/cart"
                     className="btn"

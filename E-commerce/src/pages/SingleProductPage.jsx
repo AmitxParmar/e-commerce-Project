@@ -22,20 +22,6 @@ const SingleProductPage = () => {
         singleProduct: product,
         fetchSingleProduct,
     } = useProductsContext();
-    const { id } = useParams();
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        fetchSingleProduct(`${url}${id}`);
-    }, [id]);
-
-    if (loading) {
-        return <Loading />;
-    }
-    if (error) {
-        return <Error message='fetching product' />
-    }
-
     const {
         name,
         price,
@@ -47,6 +33,23 @@ const SingleProductPage = () => {
         images,
         company,
     } = product;
+    const { id } = useParams();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        document.title = name;
+    }, []);
+
+    useEffect(() => {
+        fetchSingleProduct(`${url}${id}`);
+    }, [id]);
+
+    if (loading) {
+        return <Loading />;
+    }
+    if (error) {
+        return <Error message='fetching product' />
+    }
 
     return (
         <Wrapper>

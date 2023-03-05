@@ -4,6 +4,11 @@ import styled from 'styled-components'
 
 
 const ProductsPage = () => {
+
+  React.useEffect(() => {
+    document.title = "Products"
+  }, []);
+
   return (
     <main id='main'>
       <PageHero title='products' />

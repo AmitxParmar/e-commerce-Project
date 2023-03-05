@@ -5,6 +5,11 @@ import { PageHero } from "../components";
 import aboutImg from "../assets/hero-bcg.jpeg";
 
 const AboutPage = () => {
+
+  React.useEffect(() => {
+    document.title = "About";
+  }, []);
+
   return (
     <main>
       <PageHero title="about" />

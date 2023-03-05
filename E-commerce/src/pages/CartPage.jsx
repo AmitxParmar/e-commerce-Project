@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 import { PageHero, CartContent } from '../components'
 
 const CartPage = () => {
+    React.useEffect(() => {
+        document.title = "Cart"
+    }, [])
 
     if (false) { // if no cart items render this
         return (
@@ -17,9 +20,6 @@ const CartPage = () => {
                         <Link to='/products' className='btn'>
                             continue shopping
                         </Link>
-                        <button onClick={() => clearCart(null)} className='link-btn clear-btn'>
-                            clear cart
-                        </button>
                     </div>
                 </Wrapper>
             </main>
@@ -30,7 +30,6 @@ const CartPage = () => {
             <PageHero title='cart' />
             <Wrapper className='page'>
                 <CartContent />
-                {/* Content of the cart goes here */}
             </Wrapper>
         </main>
     )
