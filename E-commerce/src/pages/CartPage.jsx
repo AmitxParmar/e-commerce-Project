@@ -3,12 +3,15 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { PageHero, CartContent } from '../components'
 
+import { useCartContext } from '../context/cart_context'
+
 const CartPage = () => {
+    const { cart } = useCartContext();
     React.useEffect(() => {
         document.title = "Cart"
     }, [])
 
-    if (false) { // if no cart items render this
+    if (cart.length < 1) { // if no cart items render this
         return (
             <main>
                 <PageHero title='cart' />
@@ -34,6 +37,7 @@ const CartPage = () => {
         </main>
     )
 }
+
 const Wrapper = styled.main`
     .empty {
         text-align: center;
