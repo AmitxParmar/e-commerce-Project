@@ -4,6 +4,7 @@ import History from './HistoryPage'
 import Error from './ErrorPage'
 import Products from './ProductsPage'
 import SingleProduct from './SingleProductPage'
+import Cart from './CartPage';
 
 export {
     Home,
@@ -12,4 +13,5 @@ export {
     SingleProduct,
     Error,
     History,
+    Cart
 };

@@ -7,7 +7,7 @@ import {
 import { useThemeContext } from "./context/theme_context";
 
 // components
-import { Navbar } from './components';
+import { Navbar, Footer } from './components';
 import {
   About,
   History,
@@ -41,6 +41,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<SingleProduct />} />
       </Routes>
+      <Footer />
     </Router>
   )
 }
