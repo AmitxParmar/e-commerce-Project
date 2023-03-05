@@ -16,6 +16,7 @@ import Sort from './Sort';
 import ProductImages from './ProductImages';
 import Stars from './Stars';
 import Footer from './Footer';
+import CartContent from './CartContent';
 
 export {
     Navbar,
@@ -36,4 +37,5 @@ export {
     ProductImages,
     Stars,
     Footer,
+    CartContent
 };

@@ -14,7 +14,8 @@ import {
   Home,
   Products,
   Error,
-  SingleProduct
+  SingleProduct,
+  Cart,
 } from './pages'
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/history" element={<History />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/products/:id" element={<SingleProduct />} />
       </Routes>
       <Footer />
