@@ -2,17 +2,17 @@ import React from 'react'
 import { GiCompass, GiDiamondHard, GiStabbedNote } from 'react-icons/gi'
 export const links = [
     {
-        id: 1,
+        id: "sdfwdf1",
         text: 'home',
         url: '/',
     },
     {
-        id: 2,
+        id: "awsdf23",
         text: 'about',
         url: '/about',
     },
     {
-        id: 3,
+        id: "123ed23d",
         text: 'products',
         url: '/products',
     },
