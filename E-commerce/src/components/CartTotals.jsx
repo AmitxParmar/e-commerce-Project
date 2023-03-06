@@ -25,13 +25,13 @@ const CartTotals = () => {
                         order total :<span>{formatPrice(totalAmount + shippingFee)}</span>
                     </h4>
                 </article>
-                {true ? ( // TODO: myUser goes here after user auth integration, if user exists allow checkout, disabled for now
-                    <Link to="/checkout" class>
+                {false ? ( // TODO: myUser goes here after user auth integration, if user exists allow checkout, disabled for now
+                    <Link to="/checkout" className='btn'>
                         proceed to checkout
                     </Link>
                 ) : (
                     <button type='button' className='btn'>
-                        login to checkout
+                        login to checkout {/* TODO: Implement login with redirect feature */}
                     </button>
                 )}
             </div>
