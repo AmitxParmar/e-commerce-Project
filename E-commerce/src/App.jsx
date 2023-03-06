@@ -7,7 +7,7 @@ import {
 import { useThemeContext } from "./context/theme_context";
 
 // components
-import { Navbar, Footer } from './components';
+import { Navbar, Footer, Sidebar } from './components';
 import {
   About,
   History,
@@ -34,6 +34,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <Sidebar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error />} />
