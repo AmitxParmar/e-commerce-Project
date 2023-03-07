@@ -6,7 +6,7 @@ import { FaTimes } from 'react-icons/fa'
 import logo from '../assets/logo.png'
 import logoDark from '../assets/logo.png'
 import { links } from '../utils/constants'
-/* TODO: CART BUTTON COMPONENT GOES HERE */
+import CartButtons from './CartButtons'
 
 import { useThemeContext } from '../context/theme_context'
 import { useProductsContext } from '../context/products_context';
@@ -37,7 +37,8 @@ const Sidebar = () => {
                 <ul className='links'>
                     {links.map((id, text, url) => (
                         <li key={id}>
-                            <Link to={url} onClick={closeSidebar}>
+                            {console.log(id, text, url)}
+                            <Link key={id} to={url} onClick={closeSidebar}>
                                 {text}
                             </Link>
                         </li>
@@ -50,7 +51,7 @@ const Sidebar = () => {
                         </li>
                     }
                 </ul>
-                {/* CART BUTTON GOES HERE */}
+                <CartButtons />
             </aside>
         </SidebarContainer>
     )

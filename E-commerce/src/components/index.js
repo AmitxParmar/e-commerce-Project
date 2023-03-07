@@ -20,6 +20,7 @@ import CartContent from './CartContent';
 import AddToCart from './AddToCart';
 import AmountButtons from './AmountButtons';
 import Sidebar from './Sidebar';
+import CartButtons from './CartButtons';
 
 export {
     Navbar,
@@ -43,5 +44,6 @@ export {
     CartContent,
     AddToCart,
     AmountButtons,
-    Sidebar
+    Sidebar,
+    CartButtons
 };

@@ -8,6 +8,7 @@ import { FaBars } from 'react-icons/fa'
 import logo from "../assets/logo.png"
 //import logoDark from "../assets/logo-dark.svg"
 import { links } from '../utils/constants'
+import CartButtons from './CartButtons'
 
 // context
 import { useThemeContext } from "../context/theme_context";
@@ -55,6 +56,7 @@ const Navbar = () => {
                         </>
                     )}
                 </ul>
+                <CartButtons />
             </div>
         </NavContainer>
     );
