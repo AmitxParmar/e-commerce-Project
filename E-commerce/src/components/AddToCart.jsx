@@ -39,6 +39,7 @@ const AddToCart = ({ product }) => {
               key={index}
               className={`color-btn ${mainColor === color ? "active" : null}`}
               style={{ background: color }}
+              onClick={() => setMainColor(color)}
             >
               {mainColor === color ? <FaCheck /> : null}
             </button>
@@ -58,6 +59,7 @@ const AddToCart = ({ product }) => {
             addToCart(id, mainColor, amount, product);
           }}
         >
+          {console.log("add to cart:", { id, mainColor, amount, product })}
           add to cart
         </Link>
       </div>

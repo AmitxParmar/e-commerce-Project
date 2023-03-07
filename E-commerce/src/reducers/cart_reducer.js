@@ -15,6 +15,7 @@ const cart_reducer = (state, action) => {
         case ADD_TO_CART: {
             const { id, color, amount, product } = action.payload;
             const tempItem = state.cart.find((i) => i.id === id + color);
+            console.log("add to cart process:", tempItem);
             if (tempItem) {
                 const tempCart = state.cart.map((cartItem) => {
                     if (cartItem.id === id + color) {
