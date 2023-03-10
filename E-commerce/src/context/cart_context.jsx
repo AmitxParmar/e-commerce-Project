@@ -26,6 +26,8 @@ export const CartProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     // ADD TO CART
     const addToCart = (id, color, amount, product) => {
+
+        console.log("cart check1:", { id, color, amount, product })
         dispatch({
             type: ADD_TO_CART,
             payload: {
@@ -47,6 +49,7 @@ export const CartProvider = ({ children }) => {
             payload: { id, value }
         });
     }
+
     // CLEAR CART
     const clearCart = (userId) => {
         dispatch({ type: CLEAR_CART, payload: userId });
@@ -54,7 +57,7 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => {
         dispatch({ type: COUNT_CART_TOTALS });
-        localStorage.setItem('cart', JSON.stringify(state.cart));
+
     }, [state.cart]);
 
     return (

@@ -35,7 +35,7 @@ const Sidebar = () => {
           </button>
         </div>
         <ul className='links'>
-          {links.map((id, text, url) => (
+          {links.map(({ id, text, url }) => (
             <li key={id}>
               <Link to={url} onClick={closeSidebar}>
                 {text}
@@ -55,6 +55,8 @@ const Sidebar = () => {
     </SidebarContainer>
   )
 }
+
+
 const SidebarContainer = styled.div`
   text-align: center;
   .sidebar-header {
