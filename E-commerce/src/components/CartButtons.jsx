@@ -9,7 +9,7 @@ import { useUserContext } from '../context/user_context'
 const CartButtons = () => {
   const { closeSidebar } = useProductsContext();
   const { totalItems, clearCart } = useCartContext();
-  const { signInWithPopup } = useUserContext();
+  const { signInWithGoogle } = useUserContext();
 
   return (
     <Wrapper className='cart-btn-wrapper'>
@@ -33,7 +33,7 @@ const CartButtons = () => {
         </button>
       ) : (
         <button
-          onClick={signInWithPopup}
+          onClick={signInWithGoogle}
           type="button"
           className='auth-btn'
         >
