@@ -4,42 +4,44 @@ import { FaShoppingCart, FaUserMinus, FaUserPlus } from 'react-icons/fa'
 
 import { useProductsContext } from '../context/products_context';
 import { useCartContext } from '../context/cart_context'
+import { useUserContext } from '../context/user_context'
 
 const CartButtons = () => {
-    const { closeSidebar } = useProductsContext();
-    const { totalItems, clearCart } = useCartContext();
+  const { closeSidebar } = useProductsContext();
+  const { totalItems, clearCart } = useCartContext();
+  const { signInWithPopup } = useUserContext();
 
-    return (
-        <Wrapper className='cart-btn-wrapper'>
-            <Link to='/cart' className='cart-btn' onClick={closeSidebar}>
-                Cart
-                <span className='cart-container'>
-                    <FaShoppingCart />
-                    <span className='cart-value'>{totalItems}</span>
-                </span>
-            </Link>
-            {false ? (
-                <button
-                    type='button'
-                    className='auth-btn'
-                /*  onClick={() => {
-                     clearCart();
-                     logout({ returnTo: window.location.origin });
-                 }} */
-                >
-                    Logout <FaUserMinus />
-                </button>
-            ) : (
-                <button
-                    /* onClick={loginWithRedirect} */
-                    type="button"
-                    className='auth-btn'
-                >
-                    Login <FaUserPlus />
-                </button>
-            )}
-        </Wrapper>
-    )
+  return (
+    <Wrapper className='cart-btn-wrapper'>
+      <Link to='/cart' className='cart-btn' onClick={closeSidebar}>
+        Cart
+        <span className='cart-container'>
+          <FaShoppingCart />
+          <span className='cart-value'>{totalItems}</span>
+        </span>
+      </Link>
+      {false ? (
+        <button
+          type='button'
+          className='auth-btn'
+        /*  onClick={() => {
+            clearCart();
+            logout({ returnTo: window.location.origin });
+         }} */
+        >
+          Logout <FaUserMinus />
+        </button>
+      ) : (
+        <button
+          onClick={signInWithPopup}
+          type="button"
+          className='auth-btn'
+        >
+          Login <FaUserPlus />
+        </button>
+      )}
+    </Wrapper>
+  )
 }
 const Wrapper = styled.div`
   display: grid;
