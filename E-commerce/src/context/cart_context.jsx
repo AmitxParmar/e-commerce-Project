@@ -13,7 +13,7 @@ const getLocalStorage = () => JSON.parse(localStorage.getItem("cart")) || [];
 
 // INITIAL STATE:
 const initialState = {
-    cart: getLocalStorage(),
+    cart: [],
     totalItems: 0,
     totalAmount: 0,
     shippingFee: 534,
@@ -57,7 +57,8 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => {
         dispatch({ type: COUNT_CART_TOTALS });
-
+        console.log("useEffect LocalStorage Set cart items", state.cart)
+        localStorage.setItem('cart', JSON.stringify(state.cart));
     }, [state.cart]);
 
     return (

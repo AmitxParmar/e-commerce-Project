@@ -4,33 +4,41 @@ import styled from "styled-components";
 
 import Error from "./Error";
 import Loading from "./Loading";
-
+import Product from './Product'
+import { useProductsContext } from '../context/products_context'
 
 const FeaturedProducts = () => {
-    const loading = false
-    const error = false
 
-    if (loading) {
-        return <Loading />;
-    }
+  const {
+    productsLoading: loading,
+    productsError: error,
+    featuredProducts: featured,
+  } = useProductsContext();
 
-    if (error) {
-        return <Error message="fetching featured products" />;
-    }
+  if (loading) {
+    return <Loading />;
+  }
 
-    return (
-        <Wrapper className="section">
-            <div className="title">
-                <h2>featured products</h2>
-                <div className="underline"></div>
-            </div>
-            <div className="section-center featured">
-            </div>
-            <Link className="btn" to="/products">
-                all products
-            </Link>
-        </Wrapper>
-    );
+  if (error) {
+    return <Error message="fetching featured products" />;
+  }
+
+  return (
+    <Wrapper className="section">
+      <div className="title">
+        <h2>featured products</h2>
+        <div className="underline"></div>
+      </div>
+      <div className="section-center featured">
+        {featured.slice(0, 3).map((product) => (
+          <Product key={product.id} {...product} />
+        ))}
+      </div>
+      <Link className="btn" to="/products">
+        all products
+      </Link>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.section`
