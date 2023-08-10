@@ -40,14 +40,21 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error />} />
         <Route path="/about" element={<About />} />
-        <PrivateRoute path="/history" element={<History />} />
+        <Route
+          path="/history"
+          element={
+            <PrivateRoute>
+              <History />
+            </PrivateRoute>
+          }
+        />
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/products/:id" element={<SingleProduct />} />
       </Routes>
       <Footer />
     </Fragment>
-  )
+  );
 }
 
 export default App

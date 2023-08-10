@@ -1,19 +1,11 @@
-import React, { Children } from "react";
-import { Route, Redirect } from "react-router-dom";
+import React from "react";
+import { Navigate } from "react-router-dom";
 import { useUserContext } from "../context/user_context";
 
-const PrivateRoute = ({ children, ...rest }) => {
-  const { user } = useUserContext();
-  return (
-    <Route
-      render={() => {
-        return user ? children : <Redirect to="/" />;
-      }}
-      {...rest}
-    >
-      {children}
-    </Route>
-  );
+const PrivateRoute = ({ children }) => {
+  const { myUser } = useUserContext();
+  if (!myUser) <Navigate to={"/login"} />;
+  return children;
 };
 
 export default PrivateRoute;

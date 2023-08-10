@@ -1,5 +1,10 @@
 import { useEffect, createContext, useContext, useState } from "react";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+} from "firebase/auth";
 import app from "../lib/firebase";
 import { useNavigate } from "react-router-dom";
 const UserContext = createContext();
@@ -21,6 +26,7 @@ export const UserProvider = ({ children }) => {
     signInWithPopup(auth, provider)
       .then((data) => {
         localStorage.setItem("myUser", JSON.stringify(data.user));
+        setMyUser(data.user);
         setIsAuthenticated(true);
         console.log(data.user);
       })
@@ -32,15 +38,17 @@ export const UserProvider = ({ children }) => {
   };
 
   const logOut = () => {
+    signOut(auth);
+    isAuthenticated(false);
     navigate("/");
-    localStorage.removeItem("myUser");
+    localStorage.clear();
   };
 
-  useEffect(() => {
-    /*  let unsubscribe
+  /* useEffect(() => {
+     let unsubscribe
          // unsubscribe function
-         return () => unsubscribe(); */
-  }, []);
+         return () => unsubscribe();
+  }, []); */
 
   return (
     <UserContext.Provider
