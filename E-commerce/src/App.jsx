@@ -17,6 +17,7 @@ import {
   SingleProduct,
   Cart,
 } from './pages'
+import PrivateRoute from './pages/PrivateRoute';
 
 function App() {
   const { theme } = useThemeContext();
@@ -39,7 +40,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error />} />
         <Route path="/about" element={<About />} />
-        <Route path="/history" element={<History />} />
+        <PrivateRoute path="/history" element={<History />} />
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/products/:id" element={<SingleProduct />} />
