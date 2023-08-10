@@ -10,52 +10,56 @@ import CartButtons from './CartButtons'
 
 import { useThemeContext } from '../context/theme_context'
 import { useProductsContext } from '../context/products_context';
+import { useUserContext } from '../context/user_context';
 
 const Sidebar = () => {
   const { theme } = useThemeContext();
   const { isSidebarOpen, closeSidebar } = useProductsContext();
+  const { isAuthenticated } = useUserContext();
 
   return (
     <SidebarContainer>
       <aside
         className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}
       >
-        <div className='sidebar-header'>
-          {theme === 'light-theme' ? (
-            <Link>
+        <div className="sidebar-header">
+          {theme === "light-theme" ? (
+            <Link to="/">
               <img src={logo} alt="logo" />
             </Link>
           ) : (
-            <Link>
+            <Link to="/">
               <img src={logoDark} alt="logo" />
             </Link>
           )}
-          <button onClick={closeSidebar} className="class-btn" type="button">
+          <button onClick={closeSidebar} className="close-btn" type="button">
             <FaTimes />
           </button>
         </div>
-        <ul className='links'>
-          {links.map(({ id, text, url }) => (
-            <li key={id}>
-              <Link to={url} onClick={closeSidebar}>
-                {text}
-              </Link>
-            </li>
-          ))}
-          {false &&  // TODO: add userContext here, if available render the following:
+        <ul className="links">
+          {links.map((link) => {
+            const { id, text, url } = link;
+            return (
+              <li key={id}>
+                <Link to={url} onClick={closeSidebar}>
+                  {text}
+                </Link>
+              </li>
+            );
+          })}
+          {isAuthenticated && (
             <li>
               <Link onClick={closeSidebar} to="/checkout">
                 checkout
               </Link>
             </li>
-          }
+          )}
         </ul>
         <CartButtons />
       </aside>
     </SidebarContainer>
-  )
-}
-
+  );
+};
 
 const SidebarContainer = styled.div`
   text-align: center;
@@ -128,4 +132,4 @@ const SidebarContainer = styled.div`
   }
 `;
 
-export default Sidebar
+export default Sidebar;

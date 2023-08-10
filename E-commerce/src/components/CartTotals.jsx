@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 
 import { formatPrice } from './../utils/helpers';
-import {
-    useCartContext
-} from '../context/cart_context';
+import { useCartContext } from '../context/cart_context';
+import { useUserContext } from '../context/user_context';
+import { signInWithPopup } from 'firebase/auth';
 
 const CartTotals = () => {
     const { totalAmount, shippingFee } = useCartContext();
+    const { myUser, isAuthenticated, signInWithGoogle } = useUserContext();
 
     return (
         <Wrapper>
@@ -25,13 +26,13 @@ const CartTotals = () => {
                         order total :<span>{formatPrice(totalAmount + shippingFee)}</span>
                     </h4>
                 </article>
-                {false ? ( // TODO: myUser goes here after user auth integration, if user exists allow checkout, disabled for now
+                {myUser && isAuthenticated ? (
                     <Link to="/checkout" className='btn'>
                         proceed to checkout
                     </Link>
                 ) : (
-                    <button type='button' className='btn'>
-                        login to checkout {/* TODO: Implement login with redirect feature */}
+                    <button type='button' className='btn' onClick={signInWithGoogle}>
+                        login to checkout
                     </button>
                 )}
             </div>

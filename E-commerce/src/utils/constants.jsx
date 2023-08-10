@@ -28,7 +28,7 @@ export const services = [
     },
     {
         id: "u23hr78923",
-        icon: < GiDiamondHard />,
+        icon: <GiDiamondHard />,
         title: 'vision',
         text:
             'At our ecommerce site, our vision is to become a leading platform for online shopping by providing customers with a seamless and enjoyable shopping experience.',

@@ -1,4 +1,4 @@
-import { useEffect, useContext, useReducer, createContext } from 'react';
+import { useEffect, useContext, useReducer, createContext, useState } from 'react';
 import reducer from '../reducers/cart_reducer';
 
 import {
@@ -13,7 +13,7 @@ const getLocalStorage = () => JSON.parse(localStorage.getItem("cart")) || [];
 
 // INITIAL STATE:
 const initialState = {
-    cart: [],
+    cart: [...getLocalStorage()],
     totalItems: 0,
     totalAmount: 0,
     shippingFee: 534,
@@ -24,6 +24,7 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
+
     // ADD TO CART
     const addToCart = (id, color, amount, product) => {
 
@@ -35,6 +36,7 @@ export const CartProvider = ({ children }) => {
             }
         });
     };
+
     // REMOVE ITEMS FROM CART
     const removeItem = (id) => {
         dispatch({
@@ -42,6 +44,7 @@ export const CartProvider = ({ children }) => {
             payload: id
         });
     }
+
     // TOGGLE AMOUNT
     const toggleAmount = (id, value) => {
         dispatch({
@@ -54,11 +57,10 @@ export const CartProvider = ({ children }) => {
     const clearCart = (userId) => {
         dispatch({ type: CLEAR_CART, payload: userId });
     }
-
+    //TODO: fix: localStorageIssue
     useEffect(() => {
         dispatch({ type: COUNT_CART_TOTALS });
-        console.log("useEffect LocalStorage Set cart items", state.cart)
-        localStorage.setItem('cart', JSON.stringify(state.cart));
+        localStorage.setItem("cart", JSON.stringify(state.cart));
     }, [state.cart]);
 
     return (
@@ -75,6 +77,4 @@ export const CartProvider = ({ children }) => {
     );
 };
 
-export const useCartContext = () => {
-    return useContext(CartContext);
-};
+export const useCartContext = () => useContext(CartContext)

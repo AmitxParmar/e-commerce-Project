@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { PageHero, CartContent } from '../components'
@@ -6,10 +6,12 @@ import { PageHero, CartContent } from '../components'
 import { useCartContext } from '../context/cart_context'
 
 const CartPage = () => {
-    const { cart } = useCartContext();
-    React.useEffect(() => {
-        document.title = "Cart"
-    }, [])
+    const { cart, loading } = useCartContext();
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart])
+
 
     if (cart.length < 1) { // if no cart items render this
         return (
@@ -32,7 +34,7 @@ const CartPage = () => {
         <main>
             <PageHero title='cart' />
             <Wrapper className='page'>
-                <CartContent />
+                {!loading && <CartContent />}
             </Wrapper>
         </main>
     )

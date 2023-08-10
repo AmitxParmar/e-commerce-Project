@@ -10,6 +10,7 @@ const CartButtons = () => {
   const { closeSidebar } = useProductsContext();
   const { totalItems, clearCart } = useCartContext();
   const { signInWithGoogle } = useUserContext();
+  const { myUser } = useUserContext();
 
   return (
     <Wrapper className='cart-btn-wrapper'>
@@ -20,14 +21,14 @@ const CartButtons = () => {
           <span className='cart-value'>{totalItems}</span>
         </span>
       </Link>
-      {false ? (
+      {myUser ? (
         <button
           type='button'
           className='auth-btn'
-        /*  onClick={() => {
+          onClick={() => {
             clearCart();
             logout({ returnTo: window.location.origin });
-         }} */
+          }}
         >
           Logout <FaUserMinus />
         </button>

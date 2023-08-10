@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Fragment } from 'react'
 import {
   BrowserRouter as Router, Routes, Route
 } from 'react-router-dom';
@@ -32,7 +32,7 @@ function App() {
   }, [theme]);
 
   return (
-    <Router>
+    <Fragment>
       <Navbar />
       <Sidebar />
       <Routes>
@@ -45,7 +45,7 @@ function App() {
         <Route path="/products/:id" element={<SingleProduct />} />
       </Routes>
       <Footer />
-    </Router>
+    </Fragment>
   )
 }
 

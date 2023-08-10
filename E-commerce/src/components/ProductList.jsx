@@ -20,9 +20,7 @@ const ProductList = () => {
         return <ListView products={products} />
     }
 
-    return (
-        <GridView products={products} />
-    )
+    return <GridView products={products} />
 }
 
 export default ProductList

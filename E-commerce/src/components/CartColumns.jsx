@@ -18,7 +18,7 @@ const CartColumns = () => {
 
 const Wrapper = styled.div`
     display: none;
-    @media(min-width: 776) {
+    @media(min-width: 776px) {
         display: block;
     }
 `

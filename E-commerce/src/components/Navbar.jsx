@@ -12,11 +12,14 @@ import CartButtons from './CartButtons'
 
 // context
 import { useThemeContext } from "../context/theme_context";
+import { useProductsContext } from "../context/products_context";
+import { useUserContext } from "../context/user_context";
 
 const Navbar = () => {
     const { theme } = useThemeContext();
-    console.log(theme, "Theme context");
-    console.log('navbar');
+
+    const { openSidebar } = useProductsContext();
+    const { isAuthenticated } = useUserContext();
 
     return (
         <NavContainer>
@@ -31,7 +34,7 @@ const Navbar = () => {
                             <img src={logo} alt="nav logo" />
                         </Link>
                     )}
-                    <button type="button" className="nav-toggle">
+                    <button type="button" onClick={openSidebar} className="nav-toggle">
                         <FaBars /> {/* Add openSidebar function here*/}
                     </button>
                 </div>
@@ -44,8 +47,7 @@ const Navbar = () => {
                             </li>
                         );
                     })}
-                    {/* if the user is loggedIn render the following: */}
-                    {/*  myUser: TODO: add this later */}     {false && (
+                    {isAuthenticated && (
                         <>
                             <li>
                                 <Link to="/history">history</Link>
