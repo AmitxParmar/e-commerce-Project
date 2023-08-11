@@ -1,13 +1,11 @@
-import { useState, useEffect, Fragment } from 'react'
-import {
-  BrowserRouter as Router, Routes, Route
-} from 'react-router-dom';
+import { useState, useEffect, Fragment } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Context
 import { useThemeContext } from "./context/theme_context";
 
 // components
-import { Navbar, Footer, Sidebar } from './components';
+import { Navbar, Footer, Sidebar } from "./components";
 import {
   About,
   History,
@@ -16,8 +14,9 @@ import {
   Error,
   SingleProduct,
   Cart,
-} from './pages'
-import PrivateRoute from './pages/PrivateRoute';
+} from "./pages";
+import PrivateRoute from "./pages/PrivateRoute";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   const { theme } = useThemeContext();
@@ -51,14 +50,17 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/products/:id" element={<SingleProduct />} />
+        <Route path="checkout" element={<CheckoutPage />} />
       </Routes>
       <Footer />
     </Fragment>
   );
 }
 
-export default App
+export default App;
 
-{/* Fix Error: Error: useHref() may be used only in the context of a <Router> component. It works when I directly put the url as localhost:3000/experiences
+{
+  /* Fix Error: Error: useHref() may be used only in the context of a <Router> component. It works when I directly put the url as localhost:3000/experiences
 
-Link: https://stackoverflow.com/questions/70220413/error-usehref-may-be-used-only-in-the-context-of-a-router-component-it-wor*/ }
+Link: https://stackoverflow.com/questions/70220413/error-usehref-may-be-used-only-in-the-context-of-a-router-component-it-wor*/
+}
